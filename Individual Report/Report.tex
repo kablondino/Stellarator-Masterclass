@@ -7,10 +7,19 @@
 %\usepackage{lipsum}
 \usepackage{float}
 
-%\linespread{1.05}
+\linespread{1.05}
+
+
+% MY NOTES IN COLOR
+\usepackage{xcolor}
+\newcommand\mynotes[1]{\textcolor{red}{#1}}
+%\renewcommand\mynotes[1]{}
 
 \begin{document}
 \maketitle
+
+\mynotes{What about the order of the sections? Hardware could be first or second, instead.}
+
 \section*{Introduction}
 Any fusion device that uses toroidal magnetic confinement must introduce rotational transform (poloidal twist) to mitigate particle drifts.
 One approach is to create a poloidal magnetic field by having current run toroidally in the plasma, which is defined as a tokamak.
@@ -30,24 +39,7 @@ This is the method used for TJ-II.
 The second approach involves excluding a helical coil, and instead displaces the toroidal field coils helically\cite{boozer_what_1998}.
 These methods cause the magnetic axis to be helical, as can be seen by the central displacement between each image in Fig. \ref{fig:cross-sections}.
 
-For stellarators, it is impossible to reduce the solution space of the MHD equilibrium from three to two dimensions, as all stellarators are non-axissymetric.
-However, various designs do allow for quasisymmetry, in which the \emph{magnitude} of the magnetic field can depend on only one angular coordinate:
-\begin{equation}
-	B \,=\, B(\psi,\,\theta - N_p\phi) \,=\, B(\psi,\,\Theta)
-\end{equation}
-
-If $N_p$, an integer, is zero, it is said that the device is quasi-axissymetric; otherwise, it has quasihelical symmetry.
-The direction of the magnetic field, however, still depends on all three spatial coordinates.
-Quasisymmetry has the benefit of causing neoclassical transport to be similar to that of a tokamak, reduced as compared to stellarators lacking quasisymmetry \cite{boozer_what_1998}.
-It is integral to note that TJ-II, as all heliac-designed stellarators, is not quasisymmetric.
-
-However, TJ-II has very low magnetic shear \cite{milligen_mhd_2012}.
-This means that the rotational tranform profile $\iota(\psi)$ is purposely kept nearly flat in order to avoid large magnetic islands.
-Devices with low shear generally have magnetic wells, which is an additional stabilizing mechanism \cite{aguilera_magnetic_2015}.
-
-%---------------------------------------
-
-\begin{figure}[H]
+\begin{figure}
 %\hrule
 %\vrule
 \centering
@@ -66,7 +58,26 @@ Devices with low shear generally have magnetic wells, which is an additional sta
 %\hrule
 \end{figure}
 
-\section*{Fourier Representation}
+For stellarators, it is impossible to reduce the solution space of the MHD equilibrium from three to two dimensions, as all stellarators are non-axissymetric.
+However, various designs do allow for quasisymmetry, in which the \emph{magnitude} of the magnetic field can depend on only one angular coordinate:
+\begin{equation}
+	B \,=\, B(\psi,\,\theta - N_p\phi) \,=\, B(\psi,\,\Theta)
+\end{equation}
+
+If $N_p$, an integer, is zero, it is said that the device is quasi-axissymetric; otherwise, it has quasihelical symmetry.
+The direction of the magnetic field, however, still depends on at least three spatial coordinates.
+Quasisymmetry has the benefit of causing neoclassical transport to be similar to that of a tokamak, reduced as compared to stellarators lacking quasisymmetry \cite{boozer_what_1998}.
+It is integral to note that TJ-II, as all heliac-designed stellarators, is not quasisymmetric.
+
+\mynotes{Perhaps explain more of quasisymmetry and move the next small paragraph to flexibility section.}
+
+However, TJ-II has very low magnetic shear \cite{milligen_mhd_2012}.
+This means that the rotational tranform profile $\iota(\psi)$ is purposely kept nearly flat in order to avoid large magnetic islands.
+Devices with low shear generally have magnetic wells, which is an additional stabilizing mechanism \cite{aguilera_magnetic_2015}.
+
+%---------------------------------------
+
+\section*{Fourier Representation and Flexibility}
 Any toroidal magnetic configuration can be described by the Fourier components of the field in Boozer coordinates, shown in the following equation:
 \begin{equation*}
 	B \,=\, B_0 \sum_{m,n} a_{m,n}\left(\psi\right) \cos\left(m\theta - n\phi\right),
@@ -75,7 +86,7 @@ where $\theta$ and $\phi$ are the poloidal and toroidal angles, $m$ and $n$ are 
 
 In the TJ-II design, it was found that four of these coefficients are dominant harmonics.
 These are the toroidicity $a_{0,-1}$, the helicity $a_{4,1}$, the magnetic ripple $a_{32,0}$, and the corner ripple $a_{4,0}$.
-Figure~\ref{fig:topology} shows the topology of the magnetic field with three of the four dominant harmonics, allowing for the visualization of each harmonic. The field is broken down as the following equation \cite{solano_study_1988}:
+Figure~\ref{fig:topology} \mynotes{(HELP!)} shows the topology of the magnetic field with three of the four dominant harmonics, allowing for the visualization of each harmonic. The field is broken down as the following equation \cite{solano_study_1988}:
 \begin{equation}
 	B \,=\,B_0\left[1 + a_{0,-1}\cos\theta + a_{4,1}\cos\left(4\theta - \phi\right) + a_{4,0}\cos\left(4\phi\right)\right].
 \end{equation}
@@ -144,13 +155,13 @@ TJ-II's magnetic configuration is that of a low-magnetic shear heliac with magne
 It was chosen to use a circular and helical coil to generate the torsion of the magnetic axis, in conjunction with 32 toroidal field coils.
 Additionally, these coils, along with shaping coils, allow for great flexibility in the exact specifications of the configuration.
 This allows for a wide variety of investigation in confinement and transport in heliac design.
-The device lacks any kind of quasisymmetry. Nevertheless, analysis of its magnetic topology has been done by representing the field as a Fourier series.
+The device lacks any kind of quasisymmetry. Nevertheless, analysis of its magnetic topology has been done by representing the field as a Fourier series. \mynotes{This needs SERIOUS improvements.}
 
 %---------------------------------------
 
 % References
 %\newpage
 \bibliographystyle{plain}
-\nocite{*}
+%\nocite{*}
 \bibliography{../References/References}
 \end{document}
