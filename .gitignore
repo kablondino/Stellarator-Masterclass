@@ -1,0 +1,13 @@
+# LaTeX extras
+*.bbl
+*.aux
+*.log
+*.blg
+*.toc
+
+# PDF and others
+*.pdf
+*.bak
+*.out
+*.nav
+*.snm
