@@ -18,8 +18,6 @@
 \begin{document}
 \maketitle
 
-\mynotes{What about the order of the sections? Hardware could be first or second, instead.}
-
 \section*{Introduction}
 Any fusion device that uses toroidal magnetic confinement must introduce rotational transform (poloidal twist) to mitigate particle drifts.
 One approach is to create a poloidal magnetic field by having current run toroidally in the plasma, which is defined as a tokamak.
@@ -27,15 +25,36 @@ The other two approaches define the machine as a stellarator, first invented by 
 The first approach for designing a stellarator is the intentional wobble of the field lines in resonance with non-circular deformations of the magnetic surfaces.
 
 The stellarator TJ-II, located in Madrid, Spain, uses the other approach, which involves a torsion of the magnetic axis, denoted as a heliac \cite{boozer_what_1998}.
-The variety of stellarator concepts differ by the magnetic parameters chosen, in addition to rotational transform, such as magnetic shear, aspect ratio, symmetry of the field strength, and others \cite{iaea_fusion_2012}.
+The variety of stellarator concepts differ by the magnetic parameters chosen, including rotational transform, magnetic shear, aspect ratio, symmetry of the field strength, and others \cite{iaea_fusion_2012}.
 The construction and design of TJ-II is in a manner that allows for the investigation of transport and confinement of a wide range of different magnetic configurations due to its magnetic flexibility.
+The flexibility is achieved by the highly-adjustable tuning of the current in each individual coil.
 
 %---------------------------------------
 
 \section*{Hardware of TJ-II}
+
+\begin{figure}[!b]
+%\hrule
+%\vrule
+\centering
+\begin{minipage}{0.5\linewidth}
+	\includegraphics[width=\linewidth]{../Graphics/TJ-II_Coils.png}
+	\caption{Color-labeled coils of TJ-II that recreate the magnetic surface. Red: circular, yellow: helical, blue: toroidal, green: vertical, brown: radial. The light pink denotes the plasma \cite{tj-ii_nodate}.}
+	\label{fig:coils_perspective}
+\end{minipage}
+\hfill\vrule\hfill
+\begin{minipage}{0.46\linewidth}
+	\includegraphics[width=\linewidth]{../Graphics/TJ-II_overhead.png}
+	\caption{Overhead view of TJ-II, showing the circular, helical, and vertical coils and all 32 toroidal field coils \cite{solano_study_1988}.}
+	\label{fig:coils_overhead}
+\end{minipage}
+%\vrule
+%\hrule
+\end{figure}
+
 The basic dimensions of the machine includes a major radius of 1.5 m and an averaged minor radius of 0.2 m.
-The magnetic system of TJ-II consists of 44 individual coils in total, shown in Fig.~\ref{fig:coils}.
-The main helical field is produced by the circular coil (CC), the helical coil (HX), and the 32 toroidal field coils (shown in red, yellow, and blue, respectively) \cite{tj-ii_nodate}.
+The magnetic system of TJ-II consists of 44 individual coils in total, shown in Figs.~\ref{fig:coils_perspective} and \ref{fig:coils_overhead}.
+The main helical field is produced by the circular coil (CC), the helical coil (HX), and the 32 toroidal field coils, shown in red, yellow, and blue, respectively \cite{tj-ii_nodate}.
 
 Because the helical coil spirals around the outer stainless-steel casing of the circular coil, special care was needed for installation.
 In addition, the helical coil is composed of two subcoils with 12 windings, with individually supplied currents, allowing for shear variation.
@@ -45,29 +64,10 @@ The 32 TF coils have a maximum field strength of 1 T.
 To mitigate magnetic ripple, the TF coils' currents are modulated.
 Assembly required the coils, as well as their support structures, to be built in halves \cite{ascasibar_overview_2001}.
 
-In addition, each system is mechanically de-coupled, each having its own support structure \cite{ascasibar_overview_2001}.
+Also, each system is mechanically de-coupled, each having its own support structure \cite{ascasibar_overview_2001}.
 This allows for study in the effects of different configurations.
 Specifically, in addition to the plasma volume and radius, the rotational transform can be varied.
 As it is a heliac, the overall shape of the cross-section does not change; the ``bean''-shaped cross-section is shown in Fig.~\ref{fig:cross-sections}.
-
-\begin{figure}[tb]
-%\hrule
-%\vrule
-\centering
-\begin{minipage}{0.5\linewidth}
-	\includegraphics[width=\linewidth]{../Graphics/TJ-II_Coils.png}
-	\caption{Color-labeled coils of TJ-II that recreate the magnetic surface. Red: circular, yellow: helical, blue: toroidal, green: vertical, brown: radial. The light pink denotes the plasma \cite{tj-ii_nodate}.}
-	\label{fig:coils}
-\end{minipage}
-\hfill\vrule\hfill
-\begin{minipage}{0.46\linewidth}
-	\includegraphics[width=\linewidth]{../Graphics/TJ-II_overhead.png}
-	\caption{Overhead view of TJ-II, showing the circular, helical, and vertical coils and all 32 toroidal field coils \cite{solano_study_1988}.}
-	\label{fig:coils}
-\end{minipage}
-%\vrule
-%\hrule
-\end{figure}
 
 %--------------------------------------
 
@@ -80,7 +80,7 @@ This is the method used for TJ-II.
 The second approach involves excluding a helical coil, and instead displaces the toroidal field coils helically\cite{boozer_what_1998}.
 These methods cause the magnetic axis to be helical, as can be seen by the central displacement between each image in Fig. \ref{fig:cross-sections}.
 
-\begin{figure}%[bt]
+\begin{figure}[!b]
 %\hrule
 %\vrule
 \centering
@@ -100,27 +100,41 @@ These methods cause the magnetic axis to be helical, as can be seen by the centr
 \end{figure}
 
 For stellarators, it is impossible to reduce the solution space of the MHD equilibrium from three to two dimensions, as all stellarators are non-axissymetric.
-However, various designs do allow for quasisymmetry, in which the \emph{magnitude} of the magnetic field depends on a radial coordinate $\psi$ and only one angular coordinate $\Theta$:
+However, various designs do allow for quasi-symmetry, in which the \emph{magnitude} of the magnetic field depends on a radial coordinate $\psi$ and only one angular coordinate $\Theta$:
 \begin{equation}
 	B \,=\, B(\psi,\,\theta - N_p\phi) \,=\, B(\psi,\,\Theta)
 \end{equation}
 
-If $N_p$, an integer, is zero, it is said that the device is quasi-axissymetric; otherwise, it has quasihelical symmetry.
+If $N_p$, an integer, is zero, it is said that the device is quasi-axissymetric; if $N_p$ is non-zero, it has quasi-helical symmetry.
 The direction of the magnetic field, however, still depends on at least three spatial coordinates.
-Quasisymmetry has the benefit of causing neoclassical transport to be similar to that of a tokamak, reduced as compared to stellarators lacking quasisymmetry \cite{boozer_what_1998}.
-For example, in the Helically Symmetric eXperiment (HSX), the first device with quasisymmetric field, it has been shown to reduce neoclassical transport \cite{talmadge_experimental_2008}.
+Quasisymmetry has the benefit of causing neoclassical transport to be similar to that of a tokamak, reduced as compared to stellarators lacking quasi-symmetry \cite{boozer_what_1998}.
+For example, in the Helically Symmetric eXperiment (HSX), the first stellarator with quasi-symmetric field, it has been shown to significantly reduce neoclassical transport.
+This includes a reduction in thermal diffusivity, allowing for higher electron temperatures for a particular power input \cite{talmadge_experimental_2008}.
 It is integral to note that TJ-II, as all heliac-designed stellarators, is not quasi-axissymmetric nor quasi-helically symmetric.
-Therefore, TJ-II has the problem of large neoclassical transport.
+Therefore, TJ-II has the problem of comparatively large neoclassical transport; however, anomalous transport is still a dominant channel for losses, as it is in all current-day magnetic-confinement fusion devices.
 
-\mynotes{Perhaps explain more of quasisymmetry and move the next small paragraph to flexibility section. Can TJ-II be pushed to be quasisymmetric, since it's flexible?}
-
-TJ-II is a device that is run with very low magnetic shear \cite{milligen_mhd_2012}.
+TJ-II is a device that is designed to run with very low magnetic shear \cite{milligen_mhd_2012}.
 This means that the rotational tranform profile $\iota(\psi)$ is purposely kept nearly flat in order to avoid large magnetic islands.
 Devices with low shear generally have magnetic wells, which is an additional stabilizing mechanism \cite{aguilera_magnetic_2015}.
 
 %---------------------------------------
 
 \section*{Fourier Representation and Flexibility}
+
+\begin{figure}[!b]
+	\begin{minipage}{0.48\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{../Graphics/Bcontours.png}
+\end{minipage}
+\hfill\vrule\hfill
+\begin{minipage}{0.48\textwidth}
+	\centering
+	\includegraphics[width=\linewidth]{../Graphics/Bcontours_exact.png}
+\end{minipage}
+	\caption{Topology maps of the magnetic field. The left excludes the corner ripple harmonic, while the right includes it \cite{solano_study_1988}.}
+	\label{fig:topology}
+\end{figure}
+
 Any toroidal magnetic configuration can be described by the Fourier components of the field in Boozer coordinates, shown in the following equation:
 \begin{equation*}
 	B \,=\, B_0 \sum_{m,n} a_{m,n}\left(\psi\right) \cos\left(m\theta - n\phi\right),
@@ -129,52 +143,51 @@ where $\theta$ and $\phi$ are the poloidal and toroidal angles, $m$ and $n$ are 
 
 In the TJ-II design, it was found that four of these coefficients are dominant harmonics.
 These are the toroidicity $a_{0,-1}$, the helicity $a_{4,1}$, the magnetic ripple $a_{32,0}$, and the corner ripple $a_{4,0}$.
-Figure~\ref{fig:topology} \mynotes{(HELP! Where to put the figure?)} shows the topology of the magnetic field with three of the four dominant harmonics, allowing for the visualization of each harmonic. The field is broken down as the following equation \cite{solano_study_1988}:
+%The topology of the magnetic field is shown in Fig.~\ref{fig:topology} with three of the four dominant harmonics, allowing for the visualization of each harmonic.
+The field is broken down as the following equation \cite{solano_study_1988}:
 \begin{equation}
 	B \,=\,B_0\left[1 + a_{0,-1}\cos\theta + a_{4,1}\cos\left(4\theta - \phi\right) + a_{4,0}\cos\left(4\phi\right)\right].
 \end{equation}
-
 The helicity term causes the field to approach the direction of the helical coils; the corner ripple term produces a minimum at $\theta = 0^{\circ}, \phi = 0^{\circ}$.
-The inclusion of the magnetic ripple harmonic produces large wiggles in the topology.
-\mynotes{Give relevance to showing this Fourier representation. Why was it included?}
-The breakdown of the field into these Fourier components allow for the calculation of accurate diffusion coefficients in transport analysis \cite{solano_study_1988}.
+The inclusion of the magnetic ripple harmonic produces large wiggles in the topology, which can be clearly seen in the magnetic surface map in Fig.~\ref{fig:magnetic_surface} and in the topology map in the right graph of Fig.~\ref{fig:topology}.
+The breakdown of the field into these Fourier components allow for the calculation of accurate diffusion coefficients for transport analysis \cite{solano_study_1988}.
 
-Breaking the magnetic field into components in such a manner allows for the analysis of independent effects\mynotes{??}
-
-\begin{figure}
-	\includegraphics[width=0.5\linewidth]{../Graphics/Bcontours.png}
-	\caption{Topology map of the magnetic field, excluding corner ripple \cite{solano_study_1988}.}
-	\label{fig:topology}
-\end{figure}
-
-TJ-II's flexibility comes from the fact that the magnetic configuration can be changed by finely adjusting the currents in the toroidal and central coils \cite{solano_study_1988}.
+Most magnetically-confined fusion devices have easily-adjustable heating systems, allowing for some flexibility in operation.
+However, TJ-II also has a highly-configurable magnetic system.
+Specifically, different magnetic configurations can be achieved by finely adjusting the currents in the toroidal and central coils \cite{solano_study_1988}.
 One method in adjusting the magnetic configuration is by modulating the current in the toroidal field (TF) coils.
 For example, giving a spatially sinusoidally-changing current as follows,
 \begin{equation}
 	I(\phi) \,=\, I_0 \left[1 + c_P\cos(4 \phi)\right],
 \end{equation}
 one changes the magnitude of the corner ripple, depending on the amplitude $c_P$.
-\mynotes{MORE for the previous sentence!}
-In addition, the rotational transform $\iota$ can also be modified by adjusting the current in all the coils \cite{solano_study_1988}.
-It has been shown to be controlled to between values of 1.28 and 2.24 \cite{alejaldre_review_2001}. In addition, the plasma volume can be controlled to vary between 0.3 and 1.2 m$^3$ \cite{alejaldre_first_1999}.
-\mynotes{Include the graphs from First Plasmas \cite{alejaldre_first_1999} that have shots with increasing $\iota(0)$ for comparison and proof of flexibility.}
+The rotational transform $\iota(\psi)$ can also be modified by adjusting the current in all the coils \cite{solano_study_1988}.
+It has been shown to be controlled to between values of 1.28 and 2.24 \cite{alejaldre_review_2001}.
+In addition, the plasma volume can be controlled to vary between 0.3 and 1.2 m$^3$ \cite{alejaldre_first_1999}.
+A small selection of three different configurations can be seen in Fig.~\ref{fig:3_configs}.
 
 \begin{figure}
 \centering
 	\includegraphics[width=\linewidth]{../Graphics/3_configs.png}
-	\caption{Vacuum flux surfaces at the toroidal angle $\phi = 0$ for three configurations. A variety of physical quantities can be varied, such as plasma volume and rotational transform \cite{alejaldre_first_1999}.}
+	\caption{Vacuum flux surfaces at the toroidal angle $\phi = 0$ for three different configurations with different plasma volumes. A variety of physical quantities can be varied, such as plasma volume and rotational transform \cite{alejaldre_first_1999}.}
 	\label{fig:3_configs}
 \end{figure}
 
 %---------------------------------------
 
-\section*{Conclusion}
-TJ-II's magnetic configuration is that of a low-magnetic shear heliac with magnetic wells.
+\section*{Conclusion and Improvements}
+TJ-II is a heliac stellarator with a magnetic configuration is that of a low-magnetic shear with magnetic wells.
 It was chosen to use a circular and helical coil to generate the torsion of the magnetic axis, in conjunction with 32 toroidal field coils.
 Additionally, these coils, along with shaping coils, allow for great flexibility in the exact specifications of the configuration.
+This includes the fine-tuning of the rotational transform $\iota(\psi)$ and the plasma volume.
 This allows for a wide variety of investigation in confinement and transport in heliac design.
-The device lacks any kind of quasisymmetry. Nevertheless, analysis of its magnetic topology has been done by representing the field as a Fourier series.
-\mynotes{This needs SERIOUS improvements.}
+The device lacks any kind of quasi-symmetry, resulting in larger neoclassical transport as compared to contemporary stellarators.
+Nevertheless, analysis of its magnetic topology has been done by representing the field as a Fourier series in an effort to calculate transport coefficients.
+
+As an improvement, a flux-expansion divertor concept has been considered on many different magnetic configurations.
+Specifically, the configurations which were found to be optimal for divertor operation were characterized by values of $\iota$ larger than 1.5 and have a very indented shape \cite{castejon_flux-expansion_2009}.
+However, the most significant possible improvement on TJ-II is drastic: a complete redesign of the machine that is quasi-symmetric in some manner, while maintaining the flexibility of the magnet system.
+The benefits of lower neoclassical transport cannot be ignored.
 
 %---------------------------------------
 
